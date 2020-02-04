@@ -31,28 +31,6 @@ class ADF(object):
         return abs(self.perc_stat) > abs(self.five_perc_stat)
 
 
-"""  
-# DEPRECATED
-class KPSS(object):
-    #Kwiatkowski-Phillips-Schmidt-Shin (KPSS) stationarity tests
-    def __init__(self):
-        Exception("Not implemented yet")
-        self.p_value = None
-        self.ten_perc_stat = None
-        self.perc_stat = None
-        self.p_min = 0.0
-        self.p_max = 0.2
-        self.look_back = 50
-    
-    def apply_kpss(self, time_series):
-        self.p_value = ts.adfuller(time_series, 1)[1]
-        self.five_perc_stat = ts.adfuller(time_series, 1)[4]['5%'] # possibly make this 10%
-        self.perc_stat = ts.adfuller(time_series, 1)[0]
-        
-    def use(self):
-        return (self.p_value > self.p_min) and (self.p_value < self.p_max) and (self.perc_stat > self.five_perc_stat)
-"""
-
 
 class Half_Life(object):
     """
